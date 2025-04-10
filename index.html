@@ -9,11 +9,28 @@
 <body>
     <header>
         <h1>Mein Pokédex</h1>
+        <div id="search-bar">
+          <input type="text" id="searchInput" placeholder="Suche nach Name oder ID..." />
+        </div>
+        
       </header>
       <div id="characters"></div>
+      <div id="loader" class="loader" style="display: none;"></div>
+
+
+
+
       <div id="overlay" class="hidden">
-        <div id="overlay-content"></div>
+        <div id="overlay-backdrop"></div>
+        <div id="overlay-content">
+          <div id="pokemon-details"></div>
+          <div id="overlay-controls">
+            <button id="prev-btn">⬅</button>
+            <button id="next-btn">➡</button>
+          </div>
+        </div>
       </div>
+      
       
 
       <script type="module" src="./scripte/main.js"></script>

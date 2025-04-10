@@ -1,24 +1,88 @@
-/* In main.css */
+/* ==== Overlay-Container ==== */
 #overlay {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100vw; height: 100vh;
-    background: rgba(0, 0, 0, 0.7);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 999;
-  }
-  
-  #overlay.hidden {
-    display: none;
-  }
-  
-  #overlay-content {
-    background: white;
-    padding: 20px;
-    border-radius: 12px;
-    max-width: 400px;
-    width: 90%;
-  }
-  
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+#overlay.show {
+  display: flex;
+}
+
+/* ==== Karteninhalt ==== */
+#overlay-content {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 300px; /* 🔧 Hier die kompakte Breite */
+  width: 100%;
+  position: relative;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+  gap: 1rem;
+}
+
+/* ==== Pokémon-Details ==== */
+#pokemon-details {
+  text-align: center;
+  width: 100%;
+}
+
+#pokemon-details img {
+  max-width: 100%;
+  height: auto;
+}
+
+#pokemon-details h2 {
+  font-size: 20px;
+  margin-bottom: 0.5rem;
+}
+
+#pokemon-details p {
+  font-size: 14px;
+  margin: 0.3rem 0;
+}
+
+/* ==== Typen-Badges ==== */
+#pokemon-details .type-badge {
+  display: inline-block;
+  background: #999;
+  color: white;
+  padding: 4px 10px;
+  border-radius: 16px;
+  margin: 4px 4px 0 0;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+/* ==== Pfeiltasten-Buttons ==== */
+#prev-btn,
+#next-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: #333;
+  cursor: pointer;
+  padding: 6px 10px;
+  z-index: 2;
+}
+
+#prev-btn:hover,
+#next-btn:hover {
+  color: black;
+}
+
+/* ==== Klickfläche zum Schließen ==== */
+#overlay-backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
