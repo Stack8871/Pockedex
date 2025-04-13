@@ -7,8 +7,8 @@ export async function loadPokemonData(offset = 0, limit = 30) {
     data.results.map(async (pokemon) => {
       const res = await fetch(pokemon.url);
       return await res.json();
-    })
-  );
+   })
+);
 
   return details;
 }
